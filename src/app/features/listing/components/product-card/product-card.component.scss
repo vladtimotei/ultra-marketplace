@@ -1,0 +1,29 @@
+.product__card {
+  cursor: pointer;
+  // border: 1px solid grey;
+  margin: 0 20px 30px 0;
+
+  &.selected {
+    border: 1px solid black;
+    opacity: .7;
+    cursor: not-allowed;
+  }
+}
+.product__title {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 4px 0;
+  text-align: center;
+}
+.product__price {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 4px 0;
+  text-align: center;
+}
+.product__img {
+  min-height: 130px;
+  max-height: 130px;
+  width: 240px;
+  border-bottom: 1px solid grey;
+}

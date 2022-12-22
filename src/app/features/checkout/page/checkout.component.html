@@ -1,0 +1,60 @@
+<div *ngIf="!(purchaseCompleted$ | async)" fxLayout="column" fxFlexFill>
+  <form [formGroup]="form" novalidate fxLayout="column">
+    <div fxLayout="row" fxLayoutAlign="flex-start center">
+      <mat-form-field fxFlex="25">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName" />
+      </mat-form-field>
+      <mat-form-field fxFlex="25" class="ml-40">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName" />
+      </mat-form-field>
+    </div>
+
+    <div formGroupName="address" class="mt-20">
+      <mat-form-field fxFlex="60">
+        <mat-label>Street</mat-label>
+        <input matInput formControlName="street" />
+      </mat-form-field>
+    </div>
+    <div
+      formGroupName="address"
+      fxLayout="row"
+      fxLayoutAlign="flex-start center"
+    >
+      <mat-form-field fxFlex="45">
+        <mat-label>City</mat-label>
+        <input matInput formControlName="city" />
+      </mat-form-field>
+      <mat-form-field fxFlex="45" class="ml-40">
+        <mat-label>State</mat-label>
+        <input matInput formControlName="state" />
+      </mat-form-field>
+    </div>
+
+    <div class="mt-20">
+      <mat-form-field fxFlex="60">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" />
+      </mat-form-field>
+    </div>
+  </form>
+
+  <div class="mt-40">
+    <p class="fs-18">Total: {{ totalPrice$ | async | currency }}</p>
+  </div>
+  <button mat-raised-button class="pay-btn" color="primary" (click)="onPay()">
+    Pay
+  </button>
+</div>
+<div
+  *ngIf="purchaseCompleted$ | async"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+  fxFill
+>
+  <h1>Thank you for your purchase</h1>
+  <button mat-raised-button color="primary" (click)="goToMarketplace()">
+    Buy More
+  </button>
+</div>

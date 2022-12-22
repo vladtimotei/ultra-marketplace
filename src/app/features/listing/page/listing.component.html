@@ -1,0 +1,8 @@
+<div fxLayout="row wrap" fxLayoutAlign="space-between center">
+  <product-card
+    *ngFor="let item of items$ | async"
+    [product]="item"
+    (selectProduct)="handleProductSelection($event)"
+  >
+  </product-card>
+</div>

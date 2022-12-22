@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+// helper methods
+.c-pointer {
+    cursor: pointer;
+}
+
+// Margin & Borders
+@each $prop, $abbrev in (margin: m, padding: p) {
+    @for $index from 0 through 25 {
+        $size: $index * 4;
+        $length: #{$size}px;
+
+        .#{$abbrev}-#{$size} {
+            #{$prop}: $length !important;
+        }
+
+        // PX - PY || MX - MY
+        .#{$abbrev}x-#{$size} {
+            #{$prop}-right: $length !important;
+            #{$prop}-left: $length !important;
+        }
+
+        .#{$abbrev}y-#{$size} {
+            #{$prop}-top: $length !important;
+            #{$prop}-bottom: $length !important;
+        }
+
+        // mt | mb | ml | mr --- pt | pb | pl | pr
+        .#{$abbrev}t-#{$size} {
+            #{$prop}-top: $length !important;
+        }
+
+        .#{$abbrev}r-#{$size} {
+            #{$prop}-right: $length !important;
+        }
+
+        .#{$abbrev}b-#{$size} {
+            #{$prop}-bottom: $length !important;
+        }
+
+        .#{$abbrev}l-#{$size} {
+            #{$prop}-left: $length !important;
+        }
+    }
+}
+
+.fs-18 {
+    font-size: 18px;
+}

@@ -1,0 +1,21 @@
+<mat-toolbar
+  class="py-0 px-20 mat-elevation-z1"
+  fxLayout="row"
+  fxLayoutAlign="space-between center"
+>
+  <h3 class="toolbar__title" (click)="goToMarketplace()">Marketplace</h3>
+
+  <div fxLayoutAlign="flex-end">
+    <div class="mr-40" fxLayoutAlign="center center">
+      <mat-icon class="mr-4">wallet</mat-icon>
+      <span>Wallet: {{ (authUser$ | async)?.wallet?.amount | currency }}</span>
+    </div>
+
+    <div fxLayoutAlign="center center">
+      <mat-icon class="mr-4">shopping_basket</mat-icon>
+      <a class="c-pointer" (click)="goToBasket()"
+        >Basket: ({{ basketCount$ | async }})</a
+      >
+    </div>
+  </div>
+</mat-toolbar>

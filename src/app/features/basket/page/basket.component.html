@@ -1,0 +1,38 @@
+<div fxLayout="row" fxLayoutAlign="center start" fxFlexFill>
+  <div *ngIf="!(items$ | async)?.length" class="pt-60">
+    <h1>No products.</h1>
+  </div>
+
+  <div
+    fxLayout="column"
+    fxLayoutAlign="start center"
+    *ngIf="(items$ | async)?.length"
+    fxFlexFill
+  >
+    <div fxLayout="column">
+      <basket-item
+        *ngFor="let item of items$ | async"
+        [product]="item"
+        (removeProduct)="handleProductRemoval($event)"
+      >
+      </basket-item>
+    </div>
+
+    <div class="mt-40">
+      <p class="fs-18">Total: {{ totalPrice$ | async | currency }}</p>
+    </div>
+
+    <div
+      [matTooltip]="(checkoutDisabled$ | async) ? 'Insuficient balance' : ''"
+    >
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="goToCheckout()"
+        [disabled]="checkoutDisabled$ | async"
+      >
+        Checkout
+      </button>
+    </div>
+  </div>
+</div>

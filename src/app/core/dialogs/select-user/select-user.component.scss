@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cbox {
+  cursor: pointer;
+  border: 1px solid grey;
+  padding: 12px 8px;
+
+  &.selected {
+    background-color: #546e7a;
+    color: #fff;
+  }
+}

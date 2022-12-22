@@ -1,0 +1,23 @@
+.bsk-item {
+  padding: 20px 0;
+  border-bottom: 1px solid #bdbdbd;
+  width: 340px;
+
+  &__title {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    text-align: center;
+  }
+  &__price {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    text-align: center;
+  }
+  &__img {
+    border: 1px solid grey;
+    max-height: 120px;
+    max-width: 140px;
+  }
+}

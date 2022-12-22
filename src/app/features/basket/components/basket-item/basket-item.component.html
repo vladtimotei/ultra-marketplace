@@ -1,0 +1,10 @@
+<div class="bsk-item" fxLayout="row" fxLayoutAlign="space-between center">
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <img [src]="product.imageUrl" class="bsk-item__img" />
+    <div fxLayout="column" fxLayoutAlign="center flex-start" class="ml-16">
+      <p class="bsk-item__title">{{ product.title }}</p>
+      <p class="bsk-item__price">{{ product.price | currency }}</p>
+    </div>
+  </div>
+  <mat-icon fxAlign="end" class="c-pointer mr-4" (click)="removeItem()">delete</mat-icon>
+</div>

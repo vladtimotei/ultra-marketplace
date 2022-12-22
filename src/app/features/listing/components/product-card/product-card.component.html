@@ -1,0 +1,11 @@
+<div
+  class="product__card"
+  [ngClass]="{ selected: product.selected }"
+  (click)="toggleProduct()"
+  [matTooltip]="product.selected ? 'Product already added to basket' : ''"
+  matTooltipPosition="right"
+>
+  <img [src]="product.imageUrl" class="product__img" />
+  <p class="product__title">{{ product.title }}</p>
+  <p class="product__price">{{ product.price | currency }}</p>
+</div>

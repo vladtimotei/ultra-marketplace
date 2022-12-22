@@ -1,0 +1,20 @@
+<mat-dialog-content>
+  <h2>Select an account</h2>
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="40px">
+    <div
+      *ngFor="let user of users"
+      (click)="onUserSelect(user)"
+      class="cbox"
+      [ngClass]="{ selected: user.id === selectedUser?.id }"
+    >
+      <p>Name: {{ user.firstName }} {{ user.lastName }}</p>
+      <p>Wallet: {{ user.wallet.amount | currency }}</p>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions fxLayoutAlign="end" class="px-20 pb-20">
+  <button mat-raised-button color="primary" (click)="onSubmit()">
+    Select User
+  </button>
+</mat-dialog-actions>
